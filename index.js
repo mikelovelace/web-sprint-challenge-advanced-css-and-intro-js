@@ -208,17 +208,17 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
+console.log(artists[0].name)
 
 //(2) Bio of the third artist (2nd index) in the array 
-
+console.log(artists[2].bio)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
-
-
+artists[8].name = "Vincent Van Gogh"
+console.log(artists[8].name)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
  Use getArtistByIndex to do the following:
@@ -228,10 +228,10 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
+function getArtistByIndex(array, index) {
+  return `the artist at index ${index} is ${array[index].name}`
 }  
-
+console.log(getArtistByIndex(artists, 0))
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -242,9 +242,23 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(data) {
+  let filteredArtists = []; // create new empty array to hold filtered results
+  
+	for (let i = 0; i < data.length; i++) { // loop through the array
+
+    data[i].years.split(' - '); // split the array[i].years at every index on the hyphen so the string can be converted to integers as hyphens can not be a number.
+    
+    if (parseInt(data[i].years.split(' - ')[0]) >= 1900 && parseInt(data[i].years.split(' - ')[1]) <= 2000) { // Use an IF conditional which uses ParseInt() 
+      //to convert the strings in the years array into integers and and checks if the years are less or more to specified value
+			filteredArtists.push(data[i].name);
+		}
+	}
+
+	return filteredArtists;
 }
+
+console.log(get20s(artists));
 
 
 
@@ -257,9 +271,13 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+ function removeArtist(array, index) {
+	console.log(`The current artist at index ${index} is ${array[index].name}`);
+	array.splice(index, 1); // remove one artist from index
+	console.log(`The new artist at index ${index} is ${array[index].name}`);
+	return array.length; // show the resulting length of the array after removing the artist
 }
+console.log(removeArtist(artists, 0));
    
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -278,10 +296,20 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(array){
+  let newArtist = {
+    id: 20,
+    name: "Mike Lovelace",
+    years: "1979 - 2020",
+    genre: "Web Design",
+    nationality: "American",
+    bio: "Hi this is my bio"
   }
-
+  array.push(newArtist)
+  return array
+  }
+console.log(addArtist(artists))
+console.log(artists[19].name)
   
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -291,9 +319,18 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(array) {
+	let filteredArtists = []; // create empty array to hold filtered data
+	for (let i = 0; i < array.length; i++) {
+		// loop through array
+		if (array[i].paintings >= 100) {
+			// if the paintings within the array.paintings is greater than or equal to 100
+			filteredArtists.push(array[i].name); // push those greater or equal to 100 into filtered array
+		}
+	}
+	return filteredArtists;
 }
+console.log(lotsOfArt(artists));
 
 
 
