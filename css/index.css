@@ -75,6 +75,7 @@ nav{
     margin-top:5%;
 }
 nav a{
+    padding: 0 10%;
     color:#626262;
 }
 nav span{
@@ -133,4 +134,57 @@ button:hover{
 }
 .artist img{
     width:100%;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 500px) {
+
+    h1 {
+        font-size: 4rem;
+    }
+    
+    img {
+        height: 25rem;
+    }
+
+    .title-container div {
+        height: 50vh;
+        background-position: center;
+        width: 100%;
+    }
+
+    .title-container h1 {
+        font-weight: bold;
+        line-height: 45px;
+    }
+
+    .title-container button {
+        padding: 1% 4%;
+        margin-top: 10px;
+    }
+    .title-container hr{
+        width:100%;
+    }
+
+    nav a {
+        font-size: 2rem;
+    }
+
+    .artists-container {
+        flex-direction: column;
+    }
+
+    .artist {
+        width:100%;
+        margin: 5% auto;
+    }
+
+    .artist .bio {
+        width: 100%;
+        margin: 10px 0;
+        font-size: 1.25rem;
+        letter-spacing: -.2px;
+    }
 }
