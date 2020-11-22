@@ -23,9 +23,24 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. How would you describe acessibility on the web to someone new to programming?
+
+    Acessibility on the web is important as it allows those with disabilities or different viewing devices to engage in the website. There are ways to write html code and css which help to make websites more accessible. One person may only be viewing a website on a desktop screen while another may primarily use their cellphone or tablet to view websites. A person with a disibility may only be able to engage in a particular website through a screen reader. So, when developing a website, one must take into account their audience and what would make the website more accessible to them.
+
 2. Talk about 3 different things you can do to ensure your website is accessible. 
+
+    2.a -- Media Queries -- Building a website so it is accessable on all screen sizes allows more users to navigate the website. If one builds a website strictly for one screen size, they will be excluding a very large audience. Every website should look good on a cell phone, tablet, and desktop computer.
+
+    2.b -- Semantic Html -- Writing html code should be written and labled in a way that anyone can understand it. It is very important for screen readers to have the html structured and labled correctly so it can follow and read it as expected.
+
+    2.c -- Color Contrast -- Some people see colors differently than others. Some people are even color blind. So, it is important that colors have a good amount of contrast with eachother so the viewing experience is more readable.
+
+    2.d -- Clean Dry Code -- Writing code in any programming language should be done in a way that another programmer can understand it should they ever need to edit it. Variable, named functions, classes, objects, should all have names which makes sense to the user viewing the code.
+
 3. How would you explain the concept of a variable to someone new to programming?
+    A variable is a placeholder for a type of data. It can be used to hold strings of text, numbers, and other data types. They can be used later on in the code by refering to the variable name.
+    
 4. What is the purpose of using functions in code?
+    The purpose of a function is to hold a block of code which performs tasks that are written inside of the function. If the task is a repetitive one, the function can simply be invoked by its function name instead of having to rewrite all the tasks inside the function again. The purpose of this is to not repeat code.  
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
